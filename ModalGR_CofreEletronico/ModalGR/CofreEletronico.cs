@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace ModalGR_CofreEletronico.ModalGR
 {
@@ -22,20 +23,22 @@ namespace ModalGR_CofreEletronico.ModalGR
             
         }
 
-        public string PrimeiraCriptografia(string senha1)
+        public string PrimeiraCriptografia(string senhaTextoPuro1)
         { 
-            return senha1;
+
+            return senhaTextoPuro1;
         }
 
-        public string SegundaCriptografia(string senha2)
+        public string SegundaCriptografia(string senhaTextoPuro2)
         {
 
-            return senha2;
+            return senhaTextoPuro2;
         }
 
-        public string TerceiraCriptografia(string senha3)
+        public string TerceiraCriptografia(string senhaTextoPuro3)
         {
-            return senha3;
+            
+            return senhaTextoPuro3;
         }
 
      }
