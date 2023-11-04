@@ -2,30 +2,30 @@
 
 
 var Cofre = new CofreEletronico();
-string senhaCriptografada1 = "";
-string senhaCriptografada2 = "";
-string senhaCriptografada3 = "";
+string senha1 = "";
+string senha2 = "";
+string senha3 = "";
 string senhaEscrita1;
 string senhaEscrita2;
 string senhaEscrita3;
 Cofre.ExibeTitulo();
-Cofre.PrimeiraCriptografia(senhaCriptografada1);
-Cofre.SegundaCriptografia(senhaCriptografada2);
-Cofre.TerceiraCriptografia(senhaCriptografada3);
+Cofre.PrimeiraCriptografia(senha1);
+Cofre.SegundaCriptografia(senha2);
+Cofre.TerceiraCriptografia(senha3);
 
 Console.Write("Insira sua senha: ");
 senhaEscrita1 = Console.ReadLine();
-Console.WriteLine("Senha criptografada: " + senhaCriptografada1);
+Console.WriteLine("Senha criptografada: " + senha1);
 Console.WriteLine();
 
 Console.Write("Insira sua senha: ");
 senhaEscrita2 = Console.ReadLine();
-Console.WriteLine("Senha criptografada: " + senhaCriptografada2);
+Console.WriteLine("Senha criptografada: " + senha2);
 Console.WriteLine();
 
 Console.Write("Insira sua senha: ");
 senhaEscrita3 = Console.ReadLine();
-Console.WriteLine("Senha criptografada: " + senhaCriptografada3);
+Console.WriteLine("Senha criptografada: " + senha3);
 
 
 
