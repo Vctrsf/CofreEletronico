@@ -22,5 +22,21 @@ namespace ModalGR_CofreEletronico.ModalGR
             
         }
 
+        public string PrimeiraCriptografia(string senha1)
+        { 
+            return senha1;
+        }
+
+        public string SegundaCriptografia(string senha2)
+        {
+
+            return senha2;
+        }
+
+        public string TerceiraCriptografia(string senha3)
+        {
+            return senha3;
+        }
+
      }
 }
