@@ -8,13 +8,11 @@ using ModalGR_CofreEletronico.ModalGR;
 
 namespace ModalGR_CofreEletronico.ModalGR
 {
-     class CofreEletronico
-     {
-        ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia();
+    class CofreEletronico
+    {
+        private const string _abacaxi = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista";
+        private ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia(_abacaxi);
 
-        const string chave = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista";
-        string initVector;
-        
         public void ExibeTitulo()
         {
             Console.WriteLine("=======================================================");
@@ -25,31 +23,31 @@ namespace ModalGR_CofreEletronico.ModalGR
             Console.WriteLine();
             Console.WriteLine("=======================================================");
 
-            
+
         }
 
         public string PrimeiraCriptografia(string senhaTextoPuro1)
         {
-            string resultado = servicoCripto.CriptografaAES(senhaTextoPuro1, chave, initVector);
+            string resultado = servicoCripto.CriptografaComVetor1(senhaTextoPuro1);
 
             return resultado;
         }
 
-        
+
         public string SegundaCriptografia(string senhaTextoPuro2)
         {
-            
-            string resultado = servicoCripto.CriptografaAES(senhaTextoPuro2, chave, initVector);
+
+            string resultado = servicoCripto.CriptografaComVetor2(senhaTextoPuro2);
 
             return resultado;
         }
 
         public string TerceiraCriptografia(string senhaTextoPuro3)
         {
-           string resultado = servicoCripto.CriptografaAES(senhaTextoPuro3, chave, initVector);
-            
+            string resultado = servicoCripto.CriptografaComVetor3(senhaTextoPuro3);
+
             return resultado;
         }
 
-     }
+    }
 }
