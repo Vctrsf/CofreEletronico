@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using ModalGR_CofreEletronico.ModalGR;
 
 namespace ModalGR_CofreEletronico.ModalGR
 {
      class CofreEletronico
      {
+        ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia();
+
+        const string chave = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista";
+        string initVector;
         
         public void ExibeTitulo()
         {
@@ -24,21 +29,26 @@ namespace ModalGR_CofreEletronico.ModalGR
         }
 
         public string PrimeiraCriptografia(string senhaTextoPuro1)
-        { 
+        {
+            string resultado = servicoCripto.CriptografaAES(senhaTextoPuro1, chave, initVector);
 
-            return senhaTextoPuro1;
+            return resultado;
         }
 
+        
         public string SegundaCriptografia(string senhaTextoPuro2)
         {
+            
+            string resultado = servicoCripto.CriptografaAES(senhaTextoPuro2, chave, initVector);
 
-            return senhaTextoPuro2;
+            return resultado;
         }
 
         public string TerceiraCriptografia(string senhaTextoPuro3)
         {
+           string resultado = servicoCripto.CriptografaAES(senhaTextoPuro3, chave, initVector);
             
-            return senhaTextoPuro3;
+            return resultado;
         }
 
      }
