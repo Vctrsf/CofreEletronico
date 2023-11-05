@@ -16,9 +16,9 @@ namespace ModalGR_CofreEletronico.ModalGR
         private byte[] _vetor2;
         private byte[] _vetor3;
 
-        public ServicoDeCriptografia(string banana)
+        public ServicoDeCriptografia(string chaveCriptografica)
         {
-            DefineChave(banana);
+            DefineChave(chaveCriptografica);
         }
 
         private void DefineChave(string chaveTextoPuro)
@@ -59,7 +59,7 @@ namespace ModalGR_CofreEletronico.ModalGR
         }
 
 
-        private string EncryptStringToBytes_Aes(string plainText, byte[] vetorQualquer)
+        private string EncryptStringToBytes_Aes(string plainText, byte[] vetor)
         {
             // Check arguments.
             if (plainText == null || plainText.Length <= 0)
@@ -72,7 +72,7 @@ namespace ModalGR_CofreEletronico.ModalGR
             using (Aes aesAlg = Aes.Create())
             {
                 aesAlg.Key = _chaveDeCriptografia;
-                aesAlg.IV = vetorQualquer;
+                aesAlg.IV = vetor;
 
                 // Create an encryptor to perform the stream transform.
                 ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
@@ -98,7 +98,7 @@ namespace ModalGR_CofreEletronico.ModalGR
             return resultado;
         }
 
-        private string DecryptStringFromBytes_Aes(string cipherTextString, byte[] vetorQualquer)
+        private string DecryptStringFromBytes_Aes(string cipherTextString, byte[] vetor)
         {
             // Check arguments.
             if (string.IsNullOrWhiteSpace(cipherTextString))
@@ -115,7 +115,7 @@ namespace ModalGR_CofreEletronico.ModalGR
             using (Aes aesAlg = Aes.Create())
             {
                 aesAlg.Key = _chaveDeCriptografia;
-                aesAlg.IV = vetorQualquer;
+                aesAlg.IV = vetor;
 
                 // Create a decryptor to perform the stream transform.
                 ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
