@@ -10,10 +10,10 @@ namespace ModalGR_CofreEletronico.ModalGR
 {
     class CofreEletronico
     {
-        private const string _abacaxi = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista";
-        private ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia(_abacaxi);
+        private const string _abacaxi = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista"; //Declaração da chave secreta determinada pela documentação
+        private ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia(_abacaxi);          //Cria um objeto privado a partir da classe "ServicoDeCriptografia
 
-        public void ExibeTitulo()
+        public void ExibeTitulo()       
         {
             Console.WriteLine("=======================================================");
             Console.WriteLine();
@@ -26,26 +26,30 @@ namespace ModalGR_CofreEletronico.ModalGR
 
         }
 
+        //Retorna a criptografia da senha digitada usando o algoritmo escrito a partir do método "CriptografaComVetor1".
         public string PrimeiraCriptografia(string senhaTextoPuro1)
         {
-            string resultado = servicoCripto.CriptografaComVetor1(senhaTextoPuro1);
-
-            return resultado;
+            //Armazena o resultado da criptografia feita pelo método "CriptografiaComVetor1"
+            //a partir da senha inserida pelo usuário.
+            string resultado = servicoCripto.CriptografaComVetor1(senhaTextoPuro1); 
+            return resultado;                                                       
         }
 
-
+        //Retorna a criptografia da senha digitada usando o algoritmo escrito a partir do método "CriptografaComVetor2".
         public string SegundaCriptografia(string senhaTextoPuro2)
         {
-
-            string resultado = servicoCripto.CriptografaComVetor2(senhaTextoPuro2);
-
+            //Armazena o resultado da criptografia feita pelo método "CriptografiaComVetor2" 
+            //a partir da senha inserida pelo usuário. 
+            string resultado = servicoCripto.CriptografaComVetor2(senhaTextoPuro2);    
             return resultado;
         }
 
+        //Retorna a criptografia da senha digitada usando o algoritmo escrito a partir do método "CriptografaComVetor3".
         public string TerceiraCriptografia(string senhaTextoPuro3)
         {
-            string resultado = servicoCripto.CriptografaComVetor3(senhaTextoPuro3);
-
+            //Armazena o resultado da criptografia feita pelo método "CriptografiaComVetor2" 
+            //a partir da senha inserida pelo usuário.  
+            string resultado = servicoCripto.CriptografaComVetor3(senhaTextoPuro3);   
             return resultado;
         }
 
