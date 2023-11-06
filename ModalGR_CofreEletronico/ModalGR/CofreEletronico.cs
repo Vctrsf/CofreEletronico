@@ -10,8 +10,10 @@ namespace ModalGR_CofreEletronico.ModalGR
 {
     class CofreEletronico
     {
-        private const string _abacaxi = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista"; //Declaração da chave secreta determinada pela documentação
-        private ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia(_abacaxi);          //Cria um objeto privado a partir da classe "ServicoDeCriptografia
+        //Declaração da chave secreta determinada pela documentação
+        private const string _abacaxi = "#modalGR#GPTW#top#maiorEmpresaTecnologia#baixadaSantista";
+        //Cria um objeto privado a partir da classe "ServicoDeCriptografia
+        private ServicoDeCriptografia servicoCripto = new ServicoDeCriptografia(_abacaxi);          
 
         public void ExibeTitulo()       
         {

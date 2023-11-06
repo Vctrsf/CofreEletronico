@@ -12,8 +12,9 @@ namespace ModalGR_CofreEletronico.ModalGR
     //Classe responsável por fazer a criptografia das senhas inseridas pelo usuário, usando 3 vetores diferentes.
     public class ServicoDeCriptografia
     {
+        //Declaração das variáveis necessárias para atribuição dos vetores e da chave secreta
         private byte[] _chaveDeCriptografia;
-        private byte[] _vetor1;                 //Declaração das variáveis necessárias para atribuição dos vetores e da chave secreta
+        private byte[] _vetor1;                 
         private byte[] _vetor2;
         private byte[] _vetor3;
 
@@ -31,20 +32,24 @@ namespace ModalGR_CofreEletronico.ModalGR
             var chaveArrayDeBytes = Encoding.UTF8.GetBytes(chaveTextoPuro);         
 
             //Aplica um cálculo matemático de HASH e obtém um código resultante que mantém uma correspondência com a fonte de dados fornecida, que no caso é a váriavel "chaveArrayDeBytes"
-            _chaveDeCriptografia = SHA256.Create().ComputeHash(chaveArrayDeBytes);  
+            _chaveDeCriptografia = SHA256.Create().ComputeHash(chaveArrayDeBytes);
 
-
-            string IV1 = "ZbyzlmF79ygI7cU";     //Declaração de strings com valores fixos para serem usadas como base dos vetores do algoritmo de encriptação 
-            string IV2 = "NltFbEpQ4otbmUz";     //com o uso da classe "Encoding".       
+            //Declaração de strings com valores fixos para serem usadas como base dos vetores do algoritmo de encriptação 
+            //com o uso da classe "Encoding".
+            string IV1 = "ZbyzlmF79ygI7cU";     
+            string IV2 = "NltFbEpQ4otbmUz";            
             string IV3 = "Z1IhlzCLq5I9OWG";
 
-            var arrayV1 = Encoding.UTF8.GetBytes(IV1);      //Transofrma o valor fixo das variáveis "IV1", "IV2", "IV3" em um array de bytes.
+            //Transofrma o valor fixo das variáveis "IV1", "IV2", "IV3" em um array de bytes.
+            var arrayV1 = Encoding.UTF8.GetBytes(IV1);      
             var arrayV2 = Encoding.UTF8.GetBytes(IV2);      
             var arrayV3 = Encoding.UTF8.GetBytes(IV3);
 
+            //Realiza o calculo matemático HASH a partir do array de bytes anteriormente transformados a partir das variáveis
+            //"arrayV1", "arrayV2", "arrayV3"
             _vetor1 = MD5.Create().ComputeHash(arrayV1);
-            _vetor2 = MD5.Create().ComputeHash(arrayV2);    //Realiza o calculo matemático HASH a partir do array de bytes anteriormente transformados a partir das variáveis
-            _vetor3 = MD5.Create().ComputeHash(arrayV3);    //"arrayV1", "arrayV2", "arrayV3"
+            _vetor2 = MD5.Create().ComputeHash(arrayV2);    
+            _vetor3 = MD5.Create().ComputeHash(arrayV3);    
 
         }
 

@@ -1,20 +1,26 @@
 ﻿using ModalGR_CofreEletronico.ModalGR;
 
-
-var Cofre = new CofreEletronico(); //Criação do objeto da classe CofreEletronico
+//Criação do objeto da classe CofreEletronico
+var Cofre = new CofreEletronico(); 
+//Declaração de variáveis
 string senhaCriptografada1; 
 string senhaCriptografada2; 
-string senhaCriptografada3;         //Declaração de variáveis
+string senhaCriptografada3;         
 string senhaTextoPuro1; 
 string senhaTextoPuro2; 
 string senhaTextoPuro3;
 
-Cofre.ExibeTitulo();   //Exibe o titulo escrito na classe "CofreEletronico"
+//Exibe o titulo escrito na classe "CofreEletronico"
+Cofre.ExibeTitulo();   
 
-Console.Write("Digite a primeira senha: ");                         //Pede pro usuário inserir a senha
-senhaTextoPuro1 = Console.ReadLine();                               //Registra a senha que o usuário colocou
-senhaCriptografada1 = Cofre.PrimeiraCriptografia(senhaTextoPuro1);  //Declara a senha criptografada como primeira criptografia feita pela método "PrimeiraCriptografia"
-Console.WriteLine("Senha criptografada: " + senhaCriptografada1);   //Mostra ao usuario a o retorno da senha criptografada
+//Pede pro usuário inserir a senha
+Console.Write("Digite a primeira senha: ");
+//Registra a senha que o usuário colocou
+senhaTextoPuro1 = Console.ReadLine();
+//Declara a senha criptografada como primeira criptografia feita pela método "PrimeiraCriptografia"
+senhaCriptografada1 = Cofre.PrimeiraCriptografia(senhaTextoPuro1);
+//Mostra ao usuario a o retorno da senha criptografada
+Console.WriteLine("Senha criptografada: " + senhaCriptografada1);   
 Console.WriteLine();
 
 Console.Write("Digite a segunda senha: ");
